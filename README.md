@@ -4,6 +4,33 @@ An AI agent that turns a geospatial dataset and a task description into a traine
 
 Built for the AUB ACM × RASID hackathon, 31 October–1 November 2026.
 
+## My contributions — Mohammad Jaffal
+
+This is my portfolio fork of the [team's original GoTrain repository](https://github.com/Hsenabbass/GoTrain).
+I contributed as [JoeJaffal](https://github.com/JoeJaffal), focusing on the product interface,
+service integration, and reliable model delivery around the team's ML experimentation engine.
+
+- **Conversation interface:** implemented dataset attachments, persistent chat history,
+  progress timelines, experiment/model history, prediction previews, and package downloads.
+  See the [interface](ui/src/app.js) and [persistent-history commit](https://github.com/Hsenabbass/GoTrain/commit/07976e8eaecf4a0b850e0647566a466a6df55973).
+- **Dataset intake and clarification:** added bounded dataset imports and persistent request
+  preflight, preserving clarification context and validating image headers before execution.
+  See [request handling](src/gotrain/requests.py) and the [intake implementation](https://github.com/Hsenabbass/GoTrain/commit/78ac7bcc9f53211403441d026c03a20e4d4cbc50).
+- **Durable execution and limits:** implemented admission/budget accounting and a detached
+  job supervisor, including persisted reconnect and stop behavior, and connected supported
+  tasks to the shared training worker. See [admission](src/gotrain/admission.py),
+  [jobs](src/gotrain/jobs.py), and the [supervisor implementation](https://github.com/Hsenabbass/GoTrain/commit/ed46b8c356d8262620c38aaa1ec490cb335902b2).
+- **Model delivery:** built versioned standalone CPU model packages, supported custom dataset
+  identifiers in exports, and integrated verified model delivery into the workspace.
+  See [packaging](src/gotrain/packages.py) and the [package implementation](https://github.com/Hsenabbass/GoTrain/commit/198e86deb3138febe6058214bf6acc7564a93866).
+- **Developer experience and communication:** added the [one-command launcher](start.py)
+  and contributed the [results figures and technical presentation brief](docs/m5-results.md).
+
+The benchmark results are **team results**, not individual performance claims.
+The [results and limitations](docs/m5-results.md) distinguish validation scores from
+held-out test evaluation. The [upstream contribution history](https://github.com/Hsenabbass/GoTrain/commits/main/?author=JoeJaffal)
+provides the implementation record for my work.
+
 ## Start here
 
 - **[Project plan](docs/PROJECT_PLAN.md):** our goals, approach, five milestones, dependencies, and when to use each tool.
